@@ -1,0 +1,223 @@
+@import "./variables";
+@import "./mixin";
+// NAVIGATION
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100px;
+    border-bottom: 5px double $--red-100;
+    padding: 0 10px;
+    background-color: $--blue-300;
+    &-logo {
+        img {
+            width: auto;
+            height: 70px;
+            margin: 0 auto;
+        }
+        span {
+            font-size: 20px;
+            font-family: $--ff-courier-new;
+            color: $--white;
+        }
+    }
+    &-nav {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        &-item {
+            display: block;
+            padding: 10px 15px;
+            font-family: $--ff-verdana;
+            font-size: 16px;
+            font-weight: 600;
+            color: $--white;
+            cursor: pointer;
+        }
+        .navbar-nav-item:hover {
+            color: $--yellow;
+        }
+    }
+}
+// BANNER
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 50vw;
+    background-image: url(../img/Slideshow-banner/mercedes_benz_c_300_amg_line_2022_4k_3-HD.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s;
+    .banner-text-model {
+        @include banner_text;
+        left: 0;
+        font-size: 50px;
+        letter-spacing: 5px;
+        color: $--white;
+        background-color: $--black;
+    }
+    .banner-text-slogan {
+        @include banner_text;
+        right: 0;
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: $--black;
+        background-color: $--white;
+    }
+    .banner-link-detail {
+        position: absolute;
+        bottom: 20px;
+        padding: 0 5px;
+        height: 50px;
+        line-height: 50px;
+        background-color: $--white;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 22px;
+        font-weight: 500;
+        color: $--black;
+        font-family: $--ff-verdana;
+        transition: color 0.5s, background-color 0.5s;
+        .fa-long-arrow-right {
+            display: none;
+            transition: margin 0.5s;
+        }
+    }
+    
+    .banner-link-detail:hover {
+        background-color: $--red-100;
+        color: $--white;
+        .fa-long-arrow-right {
+            display: inline-block;
+            margin: 0 0 0 10px;
+        }
+    }
+}
+
+
+// RECOMMEND
+.recommend {
+    width: 100%;
+    background-color: $--black;
+    overflow: hidden;
+    .recommend-title {
+        color: $--white;
+    }
+    .recommend-container-scroll {
+        width: 100%;
+        height: 500px;
+        position: relative;
+        .recommend-scroll-bar {
+            display: grid;
+            grid-template-columns: repeat(5, 300px);
+            grid-template-rows: 500px;
+            gap: 20px;
+            width: 1650px;
+            position: absolute;
+            left: 20px;
+            .scroll-bar-item {
+                display: block;
+                position: relative;
+                width: 300px;
+                height: 400px;
+                margin: 0 20px 0 0;
+                background-color: $--white;
+                .item-title {
+                    margin: 15px 5px;
+                    color: $--red-100;
+                    letter-spacing: 1px;
+                    text-align: center;
+                }
+                .item-content {
+                    font-size: 18px;
+                    font-family: $--ff-gil-sans;
+                    margin: 15px 10px auto;
+                    text-align: center;
+                    color: $--black;
+                }
+                .item-link {
+                    width: 90%;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 15px;
+                    transform: translate(-50%, 0);
+                    padding: 10px 5px;
+                    text-align: center;
+                    font-family: $--ff-verdana;
+                    font-weight: 600;
+                    background-color: $--blue-200;
+                    color: $--green-200;
+                    transition: color 0.5s;
+                }
+                .item-link:hover {
+                    color: $--red-200;
+                }
+            }
+            .item-last {
+                grid-column: 5/6;
+                grid-row: 1/2;
+            }
+        }
+    }
+    
+}
+// VEHICLE
+
+.vehicle {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    .vehicle-title {
+        grid-column: 1/3;
+    }
+    .vehicle-filter-type {
+        height: 200px;
+        .filter-title {
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin: 20px auto;
+            color: $--black;
+            border-bottom: solid 1px $--black;
+        }
+        .btn-filter {
+            width: 120px;
+            padding: 10px;
+            border: solid 2px $--black;
+            border-radius: 5%;
+            margin: 20px auto;
+            background-color: $--white-100;
+            color: $--blue-100;
+            font-size: 17px;
+            font-weight: 600;
+            transition: background-color 1s, color 1s;
+        }
+        .btn-filter:hover {
+            color: $--white;
+            background-color: $--black;
+        }
+    }
+    .vehicle-list-product {
+        height: 500px;
+        border-left: 1px solid $--black;
+        .vehicle-list-product-type {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            row-gap: 30px;
+            margin: auto 10px;
+            .product-type-title {
+                grid-column: 1/4;
+                padding: 10px 0;
+                color: $--red-100;
+                border-bottom: solid 1px $--gray-200;
+            }
+            .product-item {
+                margin-left: 10px;
+            }
+        }
+    }
+}
+// APPLICATION
+// FOOTER

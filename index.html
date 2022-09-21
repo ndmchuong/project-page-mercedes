@@ -5,11 +5,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/Icon/favicon-mercedes.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <script defer src=""></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <!-- link icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="./main.js"></script>
     <title>Mercedes-Benz Việt Nam</title>
 </head>
 <body>
-    
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+        <a href="./index.html" class="navbar-logo">
+            <img src="./img/Icon/logo.jpg">
+            <span>Mercedes-Benz</span>
+        </a>
+        <ul class="navbar-nav">
+            <li class="navbar-nav-item">CÁC DÒNG XE</li>
+            <li class="navbar-nav-item">MUA TRỰC TUYẾN</li>
+            <li class="navbar-nav-item">TƯ VẤN MUA XE</li>
+            <li class="navbar-nav-item">DỊCH VỤ</li>
+            <li class="navbar-nav-item">THẾ GIỚI MERCEDES</li>
+        </ul>
+    </header>
+    <!-- BANNER -->
+
+    <section class="banner">
+        <div class="banner-text-model">C-Class</div>
+        <div class="banner-text-slogan">Đây là thế giới của tôi</div>
+        <a href="c-class.html" class="banner-link-detail">Tìm hiểu thêm
+            <i class="fa fa-long-arrow-right"></i>
+        </a>
+    </section>
+    <!-- RECOMMEND -->
+
+    <section class="recommend">
+        <h1 class="recommend-title">Tìm hiểu thêm</h1>
+        <div class="recommend-container-scroll">
+            <div class="recommend-scroll-bar">
+                <div class="scroll-bar-item">
+                    <img src="./img/Our-recommend/img-framePrice-glc300.jpg" class="item-img">
+                    <h3 class="item-title">Nhận báo giá xe tại đại lý</h3>
+                    <p class="item-content">Tìm xe có sẵn tại đại lý và nhận báo giá</p>
+                    <a href="" class="item-link">Tìm hiểu thêm</a>
+                </div>
+                <div class="scroll-bar-item">
+                    <img src="./img/Our-recommend/img-frameMaybach_gls_600.jpg" class="item-img">
+                    <h3 class="item-title">Mercedes-Maybach GLS</h3>
+                    <p class="item-content">Định nghĩa mới của sự xa xỉ</p>
+                    <a href="" class="item-link">Tìm hiểu thêm</a>
+                </div>
+                <div class="scroll-bar-item">
+                    <img src="./img/Our-recommend/img-frameAmg-gt-63s-gia.jpg" class="item-img">
+                    <h3 class="item-title">Dòng xe Mercedes-AMG</h3>
+                    <p class="item-content">Các mẫu xe thể thao hiệu suất cao Mercedes-AMG</p>
+                    <a href="" class="item-link">Tìm hiểu thêm</a>
+                </div>
+                <div class="scroll-bar-item">
+                    <img src="./img/Our-recommend/img-frameCertified.jpg" class="item-img">
+                    <h3 class="item-title">Xe đã qua sử dụng chính hãng</h3>
+                    <p class="item-content">An tâm với Mercedes Certified</p>
+                    <a href="" class="item-link">Tìm hiểu thêm</a>
+                </div>
+                <div class="scroll-bar-item item-last">
+                    <img src="./img/Our-recommend/img-frameBook.png" class="item-img">
+                    <h3 class="item-title">Đặt hẹn dịch vụ trực tuyến</h3>
+                    <p class="item-content">Đặt lịch hẹn dịch vụ trực tuyến một cách thuận tiện</p>
+                    <a href="" class="item-link">Tìm hiểu thêm</a>
+                </div>
+            </div>
+            </div>
+            
+    </section>
+    <!-- VEHICLE -->
+
+    <section class="vehicle">
+        <h1 class="vehicle-title">CÁC DÒNG XE MERCEDES-BENZ</h1>
+        <div class="vehicle-filter-type">
+            <h2 class="filter-title">Loại xe</h2>
+            <button class="btn-filter" id="sedan">Xe Sedan</button>
+            <button class="btn-filter" id="suv">Xe Crossover / SUV</button>
+            <button class="btn-filter" id="coupe">Xe Coupe</button>
+            <hr>
+            <button class="btn-filter" id="view-all">Xem tất cả</button>
+        </div>
+        <div class="vehicle-list-product">
+            <div class="vehicle-list-product-type">
+                <h3 class="product-type-title">Sedan</h3>
+                <div class="product-item">
+                    <h4 class="product-item-title">A-Class</h4>
+                    <span class="product-item-price"></span>
+                    <img src="./img/Vehicles/A-class/home-a35-1.jpg" class="product-item-img">
+                </div>
+                <div class="product-item">
+                    <h4 class="product-item-title">C-Class</h4>
+                    <span class="product-item-price"></span>
+                    <img src="./img/Vehicles/C-class/home-Mercedes-Benz-C-Class-1.jpg" class="product-item-img">
+                </div>
+                <div class="product-item">
+                    <h4 class="product-item-title">E-Class</h4>
+                    <span class="product-item-price"></span>
+                    <img src="./img/Vehicles/E-class/home-Mercedes-e-class-1.jpg" class="product-item-img">
+                </div>
+                <div class="product-item">
+                    <h4 class="product-item-title">S-Class</h4>
+                    <span class="product-item-price"></span>
+                    <img src="./img/Vehicles/S-class/home-Mercedes-Benz-S-Class-1.jpg" class="product-item-img">
+                </div>
+                <div class="product-item">
+                    <h4 class="product-item-title">Maybach S-Class</h4>
+                    <span class="product-item-price"></span>
+                    <img src="./img/Vehicles/S-class/home-maybach-1.jpg" class="product-item-img">
+                </div>
+            </div>
+            <div class="vehicle-list-product-type"></div>
+            <div class="vehicle-list-product-type"></div>
+        </div>
+    </section>
+    <!-- APPLICATION -->
+    <!-- FOOTER -->
 </body>
 </html>

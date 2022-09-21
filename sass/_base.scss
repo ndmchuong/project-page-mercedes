@@ -1,0 +1,46 @@
+@import "./variables";
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 16px;
+    font-family: $--ff-courier-new;
+    color: $--gray-100;
+}
+a {
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+ul {
+    list-style-type: none;
+}
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $--ff-verdana;
+}
+h1 {
+    letter-spacing: 3px;
+    color: $--black;
+    font-weight: 500;
+    margin: 30px 20px;
+    font-size: 32px;
+}
+button {
+    display: block;
+    cursor: pointer;
+}
+span {
+    display: inline-block;
+}

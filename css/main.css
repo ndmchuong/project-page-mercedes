@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+  color: #929292;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+  letter-spacing: 3px;
+  color: #000;
+  font-weight: 500;
+  margin: 30px 20px;
+  font-size: 32px;
+}
+
+button {
+  display: block;
+  cursor: pointer;
+}
+
+span {
+  display: inline-block;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  border-bottom: 5px double #ed0000;
+  padding: 0 10px;
+  background-color: #151827;
+}
+.navbar-logo img {
+  width: auto;
+  height: 70px;
+  margin: 0 auto;
+}
+.navbar-logo span {
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  color: #fff;
+}
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbar-nav-item {
+  display: block;
+  padding: 10px 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.navbar-nav .navbar-nav-item:hover {
+  color: #cddc06;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 50vw;
+  background-image: url(../img/Slideshow-banner/mercedes_benz_c_300_amg_line_2022_4k_3-HD.jpg);
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s;
+}
+.banner .banner-text-model {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-weight: 900;
+  left: 0;
+  font-size: 50px;
+  letter-spacing: 5px;
+  color: #fff;
+  background-color: #000;
+}
+.banner .banner-text-slogan {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 55px;
+  line-height: 55px;
+  text-align: center;
+  font-weight: 900;
+  right: 0;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #000;
+  background-color: #fff;
+}
+.banner .banner-link-detail {
+  position: absolute;
+  bottom: 20px;
+  padding: 0 5px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #fff;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 22px;
+  font-weight: 500;
+  color: #000;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: color 0.5s, background-color 0.5s;
+}
+.banner .banner-link-detail .fa-long-arrow-right {
+  display: none;
+  transition: margin 0.5s;
+}
+.banner .banner-link-detail:hover {
+  background-color: #ed0000;
+  color: #fff;
+}
+.banner .banner-link-detail:hover .fa-long-arrow-right {
+  display: inline-block;
+  margin: 0 0 0 10px;
+}
+
+.recommend {
+  width: 100%;
+  background-color: #000;
+  overflow: hidden;
+}
+.recommend .recommend-title {
+  color: #fff;
+}
+.recommend .recommend-container-scroll {
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 300px);
+  grid-template-rows: 500px;
+  gap: 20px;
+  width: 1650px;
+  position: absolute;
+  left: 20px;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar .scroll-bar-item {
+  display: block;
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 0 20px 0 0;
+  background-color: #fff;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar .scroll-bar-item .item-title {
+  margin: 15px 5px;
+  color: #ed0000;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar .scroll-bar-item .item-content {
+  font-size: 18px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 15px 10px auto;
+  text-align: center;
+  color: #000;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar .scroll-bar-item .item-link {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  transform: translate(-50%, 0);
+  padding: 10px 5px;
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  background-color: #051e46;
+  color: #09c323;
+  transition: color 0.5s;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar .scroll-bar-item .item-link:hover {
+  color: #dc0505;
+}
+.recommend .recommend-container-scroll .recommend-scroll-bar .item-last {
+  grid-column: 5/6;
+  grid-row: 1/2;
+}
+
+.vehicle {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+.vehicle .vehicle-title {
+  grid-column: 1/3;
+}
+.vehicle .vehicle-filter-type {
+  height: 200px;
+}
+.vehicle .vehicle-filter-type .filter-title {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  margin: 20px auto;
+  color: #000;
+  border-bottom: solid 1px #000;
+}
+.vehicle .vehicle-filter-type .btn-filter {
+  width: 120px;
+  padding: 10px;
+  border: solid 2px #000;
+  border-radius: 5%;
+  margin: 20px auto;
+  background-color: #c8c8c8;
+  color: #00197e;
+  font-size: 17px;
+  font-weight: 600;
+  transition: background-color 1s, color 1s;
+}
+.vehicle .vehicle-filter-type .btn-filter:hover {
+  color: #fff;
+  background-color: #000;
+}
+.vehicle .vehicle-list-product {
+  height: 500px;
+  border-left: 1px solid #000;
+}
+.vehicle .vehicle-list-product .vehicle-list-product-type {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  row-gap: 30px;
+  margin: auto 10px;
+}
+.vehicle .vehicle-list-product .vehicle-list-product-type .product-type-title {
+  grid-column: 1/4;
+  padding: 10px 0;
+  color: #ed0000;
+  border-bottom: solid 1px #7b7b7b;
+}
+.vehicle .vehicle-list-product .vehicle-list-product-type .product-item {
+  margin-left: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */
