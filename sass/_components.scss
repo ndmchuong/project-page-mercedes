@@ -172,7 +172,7 @@
         grid-column: 1/3;
     }
     .vehicle-filter-type {
-        height: 200px;
+        
         .filter-title {
             height: 40px;
             line-height: 40px;
@@ -199,7 +199,6 @@
         }
     }
     .vehicle-list-product {
-        height: 500px;
         border-left: 1px solid $--black;
         .vehicle-list-product-type {
             display: grid;
@@ -209,15 +208,54 @@
             margin: auto 10px;
             .product-type-title {
                 grid-column: 1/4;
+                position: sticky;
+                top: -1px;
                 padding: 10px 0;
+                background-color: $--white;
                 color: $--red-100;
                 border-bottom: solid 1px $--gray-200;
             }
             .product-item {
                 margin-left: 10px;
+                padding-bottom: 50px;
+                &-title {
+                    text-align: center;
+                    color: $--black;
+                    font-size: 20px;
+                }
+                &-price {
+                    width: 100%;
+                    text-align: center;
+                    margin: 10px 0 25px;
+                    color: $--gray-200;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
             }
         }
     }
 }
-// APPLICATION
+// SERVICES
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 0 20px 20px;
+    background-color: $--gray-100;
+    .services-title {
+        grid-column: 1/4;
+    }
+    .services-item {
+        background-color: $--black;
+        border: solid 1px $--white;
+        &-title {
+            color: $--white;
+
+        }
+        &-note {
+            color: $--white-100;
+        }
+    }
+}
 // FOOTER

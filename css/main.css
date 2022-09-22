@@ -227,9 +227,6 @@ span {
 .vehicle .vehicle-title {
   grid-column: 1/3;
 }
-.vehicle .vehicle-filter-type {
-  height: 200px;
-}
 .vehicle .vehicle-filter-type .filter-title {
   height: 40px;
   line-height: 40px;
@@ -255,7 +252,6 @@ span {
   background-color: #000;
 }
 .vehicle .vehicle-list-product {
-  height: 500px;
   border-left: 1px solid #000;
 }
 .vehicle .vehicle-list-product .vehicle-list-product-type {
@@ -267,12 +263,50 @@ span {
 }
 .vehicle .vehicle-list-product .vehicle-list-product-type .product-type-title {
   grid-column: 1/4;
+  position: sticky;
+  top: -1px;
   padding: 10px 0;
+  background-color: #fff;
   color: #ed0000;
   border-bottom: solid 1px #7b7b7b;
 }
 .vehicle .vehicle-list-product .vehicle-list-product-type .product-item {
   margin-left: 10px;
+  padding-bottom: 50px;
+}
+.vehicle .vehicle-list-product .vehicle-list-product-type .product-item-title {
+  text-align: center;
+  color: #000;
+  font-size: 20px;
+}
+.vehicle .vehicle-list-product .vehicle-list-product-type .product-item-price {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 25px;
+  color: #7b7b7b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 20px 20px;
+  background-color: #929292;
+}
+.services .services-title {
+  grid-column: 1/4;
+}
+.services .services-item {
+  background-color: #000;
+  border: solid 1px #fff;
+}
+.services .services-item-title {
+  color: #fff;
+}
+.services .services-item-note {
+  color: #c8c8c8;
 }
 
 /*# sourceMappingURL=main.css.map */
