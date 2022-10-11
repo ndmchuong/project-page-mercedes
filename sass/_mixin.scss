@@ -46,4 +46,9 @@
             @content;
         }
     }
+    @else if ($canvas == $--SS) {
+        @media only screen and (max-width: $--SS) {
+            @content;
+        }
+    }
 }
