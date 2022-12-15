@@ -72,7 +72,6 @@ span {
 }
 
 .navbar {
-  display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -86,99 +85,126 @@ span {
     height: 70px;
   }
 }
-.navbar .btn-on-off-navigation {
+.navbar__btn--dropdown-nav {
   display: none;
+  position: relative;
+  align-items: center;
   height: 100%;
-  font-size: 25px;
-  font-weight: 600;
-  color: #ed0000;
-  background-color: #151827;
   border: none;
+  background-color: #151827;
+  margin-bottom: 5px;
   transition: letter-spacing 0.25s;
 }
+.navbar__btn--dropdown-nav .fa-bars, .navbar__btn--dropdown-nav .fa-close {
+  font-size: 25px;
+  color: #ed0000;
+}
+.navbar__btn--dropdown-nav span {
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 600;
+  color: #ed0000;
+  margin-left: 10px;
+}
 @media only screen and (max-width: 1088px) {
-  .navbar .btn-on-off-navigation {
-    display: block;
+  .navbar__btn--dropdown-nav {
+    display: flex;
   }
 }
 @media only screen and (max-width: 670px) {
-  .navbar .btn-on-off-navigation {
+  .navbar__btn--dropdown-nav {
     font-size: 20px;
   }
 }
-.navbar .btn-on-off-navigation:hover {
+.navbar__btn--dropdown-nav:hover {
   letter-spacing: 2px;
 }
-.navbar-logo img {
+.navbar__logo--img {
   width: auto;
-  height: 70px;
+  height: 60px;
   margin: 0 auto;
 }
 @media only screen and (max-width: 670px) {
-  .navbar-logo img {
+  .navbar__logo--img {
     height: 40px;
   }
 }
-.navbar-logo span {
+.navbar__logo--brand {
   font-size: 20px;
   font-family: "Courier New", Courier, monospace;
   color: #fff;
 }
-.navbar-nav {
+.navbar__nav {
   display: flex;
   align-items: center;
   height: 100%;
+  position: relative;
 }
-@media only screen and (max-width: 1088px) {
-  .navbar-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    z-index: 2;
-    left: 0;
-    top: 110px;
-    height: fit-content;
-    background-color: #051e46;
-  }
-}
-@media only screen and (max-width: 670px) {
-  .navbar-nav {
-    top: 70px;
-  }
-}
-.navbar-nav-item {
-  display: block;
+.navbar__nav__item button {
   padding: 10px 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 16px;
   font-weight: 600;
   color: #fff;
-  cursor: pointer;
+  background-color: #151827;
+  border: none;
 }
-@media only screen and (max-width: 1088px) {
-  .navbar-nav-item {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
+.navbar__nav__item button:hover {
+  background-color: #00197e;
+}
+.navbar__nav__nav-link {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+  z-index: 2;
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 3px 3px 5px #000;
+  padding: 10px 30px 30px;
+  animation-name: blur;
+  animation-duration: 1s;
+}
+.navbar__nav__nav-link__btn--close-nav {
+  width: 50px;
+  margin: 0 auto 10px;
+  border: none;
+}
+.navbar__nav__nav-link__btn--close-nav img {
+  display: inline-block;
+  width: 100%;
+}
+.navbar__nav__nav-link__title {
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+}
+.navbar__nav__nav-link__nav-link-item {
+  padding: 10px 0;
+  color: #000;
+  line-height: 26px;
+  font-size: 18px;
+}
+.navbar__nav__nav-link__nav-link-item:hover {
+  color: #7b7b7b;
+}
+@keyframes blur {
+  from {
+    opacity: 0.6;
+    left: -30px;
+  }
+  to {
+    opacity: 1;
+    left: 10px;
   }
 }
-@media only screen and (max-width: 670px) {
-  .navbar-nav-item {
-    padding: 20px 5px;
-  }
-}
-.navbar-nav .navbar-nav-item:hover {
-  color: #cddc06;
-}
 @media only screen and (max-width: 1088px) {
-  .navbar-nav .navbar-nav-item:hover {
-    background-color: #00197e;
+  .navbar__nav--landscape {
+    display: none;
   }
 }
 
 .banner {
   position: relative;
-  width: 100%;
   height: 50vw;
   background-image: url(../img/Slideshow-banner/mercedes_benz_c_300_amg_line_2022_4k_3-HD.jpg);
   background-size: cover;
@@ -186,13 +212,13 @@ span {
   transition: background-image 1s;
 }
 @media only screen and (max-width: 975px) {
-  .banner .banner-text-model, .banner .banner-text-slogan {
+  .banner__text--model, .banner__text--slogan {
     height: 45px;
     line-height: 45px;
     font-weight: 600;
   }
 }
-.banner .banner-text-model {
+.banner__text--model {
   position: absolute;
   top: 0;
   width: 50%;
@@ -207,20 +233,20 @@ span {
   background-color: #000;
 }
 @media only screen and (max-width: 975px) {
-  .banner .banner-text-model {
+  .banner__text--model {
     font-size: 40px;
     letter-spacing: 3px;
   }
 }
 @media only screen and (max-width: 670px) {
-  .banner .banner-text-model {
+  .banner__text--model {
     font-size: 18px;
     height: 20px;
     width: 30%;
     line-height: 20px;
   }
 }
-.banner .banner-text-slogan {
+.banner__text--slogan {
   position: absolute;
   top: 0;
   width: 50%;
@@ -235,13 +261,13 @@ span {
   background-color: #fff;
 }
 @media only screen and (max-width: 975px) {
-  .banner .banner-text-slogan {
+  .banner__text--slogan {
     font-size: 20px;
     letter-spacing: 0;
   }
 }
 @media only screen and (max-width: 670px) {
-  .banner .banner-text-slogan {
+  .banner__text--slogan {
     font-size: 16px;
     width: 70%;
     height: 20px;
@@ -249,7 +275,7 @@ span {
     letter-spacing: 0;
   }
 }
-.banner .banner-link-detail {
+.banner__link-product {
   position: absolute;
   bottom: 20px;
   padding: 0 5px;
@@ -266,35 +292,34 @@ span {
   transition: color 0.5s, background-color 0.5s, width 0.5s;
 }
 @media only screen and (max-width: 860px) {
-  .banner .banner-link-detail {
+  .banner__link-product {
     bottom: 0;
     height: 30px;
     line-height: 30px;
     font-size: 18px;
   }
 }
-.banner .banner-link-detail .fa-long-arrow-right {
+.banner__link-product .fa-long-arrow-right {
   display: none;
   transition: margin 0.5s;
 }
-.banner .banner-link-detail:hover {
+.banner__link-product:hover {
   background-color: #ed0000;
   color: #fff;
 }
-.banner .banner-link-detail:hover .fa-long-arrow-right {
+.banner__link-product:hover .fa-long-arrow-right {
   display: inline-block;
   margin: 0 0 0 5px;
 }
 
 .recommend {
-  width: 100%;
   background-color: #000;
   overflow: hidden;
 }
-.recommend .recommend-title {
+.recommend__title {
   color: #fff;
 }
-.recommend .recommend-list {
+.recommend__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 15px;
@@ -302,17 +327,17 @@ span {
   padding: 40px 10px 80px;
 }
 @media only screen and (max-width: 670px) {
-  .recommend .recommend-list {
+  .recommend__list {
     grid-template-columns: repeat(1, 1fr);
     padding: 40px 0 80px;
   }
 }
-.recommend .recommend-list .recommend-list-item {
+.recommend__list__item {
   position: relative;
 }
-.recommend .recommend-list .recommend-list-item .recommend-list-item-title {
+.recommend__list__item__title {
   position: absolute;
-  top: -25px;
+  top: -28px;
   width: 100%;
   height: 25px;
   line-height: 25px;
@@ -320,7 +345,12 @@ span {
   color: #ed0000;
   background-color: #000;
 }
-.recommend .recommend-list .recommend-list-item .recommend-list-item-content {
+@media only screen and (max-width: 975px) {
+  .recommend__list__item__title {
+    font-size: 20px;
+  }
+}
+.recommend__list__item__content {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -333,11 +363,11 @@ span {
   opacity: 0.7;
 }
 @media only screen and (max-width: 860px) {
-  .recommend .recommend-list .recommend-list-item .recommend-list-item-content {
+  .recommend__list__item__content {
     font-size: 16px;
   }
 }
-.recommend .recommend-list .recommend-list-item .recommend-list-item-link {
+.recommend__list__item__link {
   position: absolute;
   bottom: -30px;
   height: 30px;
@@ -351,7 +381,7 @@ span {
   font-weight: 600;
   transition: color 0.3s;
 }
-.recommend .recommend-list .recommend-list-item .recommend-list-item-link:hover {
+.recommend__list__item__link:hover {
   color: #cddc06;
   text-decoration: underline #ed0000;
 }
@@ -378,10 +408,9 @@ span {
   }
 }
 .vehicle .vehicle-filter-type .filter-title {
-  height: 40px;
-  line-height: 40px;
   text-align: center;
   margin: 20px auto;
+  padding-bottom: 5px;
   color: #000;
   border-bottom: solid 1px #000;
 }
@@ -666,10 +695,6 @@ footer .license-social-network .footer-topic-social-network {
 footer .license-social-network .footer-topic-social-network .social-network-item {
   width: 35px;
   margin-right: 20px;
-}
-
-.dp-flex {
-  display: flex;
 }
 
 /*# sourceMappingURL=main.css.map */

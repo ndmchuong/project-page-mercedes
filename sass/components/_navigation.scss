@@ -1,0 +1,129 @@
+@import "../mixin";
+@import "../variables";
+.navbar {
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100px;
+    border-bottom: 5px double $--red-100;
+    padding: 0 10px;
+    background-color: $--blue-300;
+    @include Responsive($--S) {
+        height: 70px;
+    }
+    &__btn--dropdown-nav {
+        display: none;
+        position: relative;
+        align-items: center;
+        height: 100%;
+        border: none;
+        background-color: $--blue-300;
+        margin-bottom: 5px;
+        transition: letter-spacing 0.25s;
+        .fa-bars, .fa-close {
+            font-size: 25px;
+            color: $--red-100;
+        }
+        span {
+            font-size: 25px;
+            line-height: 25px;
+            font-weight: 600;
+            color: $--red-100;
+            margin-left: 10px;
+        }
+        @include Responsive ($--XL) {
+            display: flex;
+        }
+        @include Responsive($--S) {
+            font-size: 20px;
+        }
+    }
+    &__btn--dropdown-nav:hover {
+        letter-spacing: 2px;
+    }
+    &__logo {
+        &--img {
+            width: auto;
+            height: 60px;
+            margin: 0 auto;
+            @include Responsive($--S) {
+                height: 40px;
+            }
+        }
+        &--brand {
+            font-size: 20px;
+            font-family: $--ff-courier-new;
+            color: $--white;
+        }
+    }
+    &__nav {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        position: relative;
+        &__item {
+            button {
+                padding: 10px 15px;
+                font-family: $--ff-verdana;
+                font-size: 16px;
+                font-weight: 600;
+                color: $--white;
+                background-color: $--blue-300;
+                border: none;
+            }
+            button:hover {
+                background-color: $--blue-100;
+            }
+        }
+        &__nav-link {
+            position: absolute;
+            top: 100px;
+            left: 10px;
+            z-index: 2;
+            width: 400px;
+            background-color: $--white;
+            box-shadow: 3px 3px 5px $--black;
+            padding: 10px 30px 30px;
+            animation-name: blur;
+            animation-duration: 1s;
+            &__btn--close-nav {
+                width: 50px;
+                margin: 0 auto 10px;
+                border: none;
+                img {
+                    display: inline-block;
+                    width: 100%;
+                }
+            }
+            &__title {
+                text-align: center;
+                color: $--black;
+                margin-bottom: 20px;
+            }
+            &__nav-link-item {
+                padding: 10px 0;
+                color: $--black;
+                line-height: 26px;
+                font-size: 18px;
+            }
+            &__nav-link-item:hover {
+                color: $--gray-200;
+            }
+        }
+        @keyframes blur {
+            from {
+                opacity: 0.6;
+                left: -30px;
+            }
+            to {
+                opacity: 1;
+                left: 10px;
+            }
+        }
+    }
+    &__nav--landscape {
+        @include Responsive ($--XL) {
+            display: none;
+        }    
+    }
+}

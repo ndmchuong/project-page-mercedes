@@ -1,0 +1,61 @@
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+    padding: 0 20px 40px;
+    background-color: $--gray-100;
+    @include Responsive($--L) {
+        gap: 15px;
+    }
+    @include Responsive($--XM) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include Responsive($--S) {
+        padding: 0 0 20px;
+    }
+    .services-title {
+        grid-column: 1/4;
+        @include Responsive($--XM) {
+            grid-column: 1/3;
+        }
+    }
+    .services-item {
+        display: grid;
+        grid-template-columns: 60px auto;
+        padding: 20px 0;
+        background-color: $--black;
+        border: solid 1px $--white;
+        @include Responsive($--S) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 5px 0;
+        }
+        &-ico {
+            grid-row: 1/3;
+            display: flex;
+            align-items: center;
+            font-size: 35px;
+            margin-left: 5px;
+            color: $--white;
+        }
+        &-title {
+            color: $--red-200;
+            line-height: 30px;
+        }
+        &-note {
+            color: $--white-100;
+        }
+        &-note, &-title {
+            @include Responsive($--S) {
+                text-align: center;
+                font-size: 16px;
+                line-height: 18px;
+                padding: 10px 0;
+            }
+        }
+    }
+    .services-item:hover {
+        background-color: $--blue-200;
+    }
+}

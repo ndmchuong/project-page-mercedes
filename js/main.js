@@ -84,8 +84,200 @@ const arrImgProduct = [
         index: 13,
         src: ["./img/Vehicles/AMG-GT-4-door/home-mercedes-amg-gt-4-door-1.jpg", "./img/Vehicles/AMG-GT-4-door/home-mercedes-amg-gt-4-door-2.jpg", "./img/Vehicles/AMG-GT-4-door/home-mercedes-amg-gt-4-door-3.jpg", "./img/Vehicles/AMG-GT-4-door/home-mercedes-amg-gt-4-door-4.jpg", "./img/Vehicles/AMG-GT-4-door/home-mercedes-amg-gt-4-door-5.jpg"]
     }
+];
+
+const listNavLink = [
+    {
+        id: 1,
+        title: "Các dòng xe",
+        li: [
+            {
+                titleLink: "Tất cả dòng xe",
+                url: ""
+            },
+            {
+                titleLink: "Sedan",
+                url: ""
+            },
+            {
+                titleLink: "Crossover / SUV",
+                url: ""
+            },
+            {
+                titleLink: "Coupe",
+                url: ""
+            },
+            {
+                titleLink: "Mercedes-AMG",
+                url: ""
+            },
+            {
+                titleLink: "Mercedes-Maybach",
+                url: ""
+            }
+        ]
+    },
+    {
+        id: 2,
+        title: "Mua trực tuyến",
+        li: [
+            {
+                titleLink: "Xe mới",
+                url: ""
+            },
+            {
+                titleLink: "Xe đã qua sử dụng",
+                url: ""
+            },
+            {
+                titleLink: "Phụ kiện chính hãng",
+                url: ""
+            },
+            {
+                titleLink: "Bộ sưu tập Mercedes-Benz",
+                url: ""
+            }
+        ]
+    },
+    {
+        id: 3,
+        title: "Tư vấn mua xe",
+        li: [
+            {
+                titleLink: "Chọn cấu hình xe",
+                url: ""
+            },
+            {
+                titleLink: "Đăng kí lái thử",
+                url: ""
+            },
+            {
+                titleLink: "Danh sách đại lý",
+                url: ""
+            },
+            {
+                titleLink: "Bảng giá & brochure",
+                url: ""
+            },
+            {
+                titleLink: "Khối doanh nghiệp & khách hàng ưu tiên",
+                url: ""
+            }
+        ]
+    },
+    {
+        id: 4,
+        title: "Dịch vụ",
+        li: [
+            {
+                titleLink: "Dịch vụ & bảo dưỡng",
+                url: ""
+            },
+            {
+                titleLink: "Phụ tùng & dầu chính hãng",
+                url: ""
+            },
+            {
+                titleLink: "Phong cách sống Mercedes",
+                url: ""
+            },
+            {
+                titleLink: "Đặt hẹn dịch vụ trực tuyến",
+                url: ""
+            },
+            {
+                titleLink: "Bảo hành & bảo hiểm",
+                url: ""
+            },
+            {
+                titleLink: "Bản tin kĩ thuật",
+                url: ""
+            }
+        ]
+    },
+    {
+        id: 5,
+        title: "Thế giới Mercedes",
+        li: [
+            {
+                titleLink: "Hệ thống đa phương tiện MBUX",
+                url: ""
+            },
+            {
+                titleLink: "Sáng tạo & công nghệ",
+                url: ""
+            },
+            {
+                titleLink: "Thiết kế & xe ý tưởng",
+                url: ""
+            },
+            {
+                titleLink: "Phát triển bền vững",
+                url: ""
+            },
+            {
+                titleLink: "Về Mercedes-Benz Việt Nam",
+                url: ""
+            }
+        ]
+    }
 ]
 
+const handleCreateNavLink = (id) => {
+    // lay ra listNavLink item co id tuong ung
+    const navLink = listNavLink.filter((value) => value.id === id);
+    // create element ul, h3, button
+    const navLinkElement = document.createElement("ul");
+    navLinkElement.className = "navbar__nav__nav-link";
+    const navLinkTitle = document.createElement("h3");
+    navLinkTitle.className = "navbar__nav__nav-link__title";
+    const btnClose = document.createElement("button");
+    btnClose.className = "navbar__nav__nav-link__btn--close-nav";
+    const iconClose = document.createElement("img");
+    iconClose.src = "./img/Icon/close-icon.jpg";
+    btnClose.appendChild(iconClose);
+    navLinkTitle.innerText = navLink[0].title;
+    // create array element "li" and "a"
+    const navLinkChild = navLink[0].li.map((item) => {
+        const navLinkItem = document.createElement("li");
+        navLinkItem.className = "navbar__nav__nav-link__nav-link-item";
+        const link = document.createElement("a");
+        link.innerHTML = item.titleLink;
+        navLinkItem.appendChild(link);
+        return navLinkItem;
+    });
+    // append cac the li vao the ul
+    navLinkElement.appendChild(btnClose);
+    navLinkElement.appendChild(navLinkTitle);
+    navLinkChild.forEach((item) => navLinkElement.appendChild(item));
+    return navLinkElement;
+}
+const handleLinkNav = (id) => {
+    const navLink = document.querySelectorAll('.navbar__nav__nav-link');
+    const navbarNavItem = document.querySelectorAll(".navbar__nav__item");
+    navbarNavItem.forEach((item) => item.children[0].style.color = "#fff");
+    navbarNavItem[id - 1].children[0].style.color = "#ed0000";
+    const navbarNav = document.querySelector(".navbar__nav");
+    if (navLink.length === 0) {
+        const navLinkNew = handleCreateNavLink(id);
+        navbarNav.appendChild(navLinkNew);
+        const btnCloseNav = document.querySelector(".navbar__nav__nav-link__btn--close-nav");
+        btnCloseNav.addEventListener("click", function() {
+            navLinkNew.remove();
+            navbarNavItem.forEach((item) => item.children[0].style.color = "#fff");
+        })
+    }
+    else {
+        navLink[0].remove();
+        const navLinkNew = handleCreateNavLink(id);
+        navbarNav.appendChild(navLinkNew);
+        const btnCloseNav = document.querySelector(".navbar__nav__nav-link__btn--close-nav");
+        btnCloseNav.addEventListener("click", function() {
+            navLinkNew.remove();
+            navbarNavItem.forEach((item) => item.children[0].style.color = "#fff");
+        })
+    }
+}
 
 let indexSlide = 0;
 const handleSlideBanner = () => {
@@ -95,9 +287,9 @@ const handleSlideBanner = () => {
     }
     
     let bgBanner = document.getElementsByClassName("banner")[0];
-    let textModel = document.getElementsByClassName("banner-text-model")[0];
-    let textSlogan = document.getElementsByClassName("banner-text-slogan")[0];
-    let linkDetail = document.getElementsByClassName("banner-link-detail")[0];
+    let textModel = document.getElementsByClassName("banner__text--model")[0];
+    let textSlogan = document.getElementsByClassName("banner__text--slogan")[0];
+    let linkDetail = document.getElementsByClassName("banner__link-product")[0];
     // custom background-image and text
     bgBanner.style.backgroundImage = `${arrImgTextBanner[indexSlide].src}`;
     textModel.innerText = `${arrImgTextBanner[indexSlide].textModel}`;
@@ -106,20 +298,15 @@ const handleSlideBanner = () => {
 } 
 setInterval(handleSlideBanner, 5000);
 
-const handleOnOffNav = () => {
-    const navBarNav = document.querySelector(".navbar-nav");
-    const iconBar = document.querySelector(".btn-on-off-navigation").children[0];
-    
+const handleDropdownNav = () => {
+    const iconBar = document.querySelector(".navbar__btn--dropdown-nav").children[0];
     if (iconBar.className === 'fa fa-bars') {
         iconBar.className = "fa fa-close";
     }
     else if (iconBar.className === "fa fa-close") {
         iconBar.className = "fa fa-bars";
     }
-    navBarNav.classList.toggle("dp-flex");
 }
-
-
 let indexSlideshowImg = 1;
 let showImg;
 const handleSlideshow = (index) => {

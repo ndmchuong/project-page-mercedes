@@ -1,0 +1,134 @@
+.vehicle {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    @include Responsive($--L) {
+        display: block;
+    }
+    .vehicle-title {
+        grid-column: 1/3;
+    }
+    .vehicle-filter-type {
+        @include Responsive($--L) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            position: sticky;
+            top: -61px;
+            z-index: 2;
+        }
+        .filter-title {
+            text-align: center;
+            margin: 20px auto;
+            padding-bottom: 5px;
+            color: $--black;
+            border-bottom: solid 1px $--black;
+            @include Responsive ($--L) {
+                grid-column: 1/4;
+                width: 100%;
+                border: none;
+                margin: 0;
+            }
+        }
+        .btn-filter {
+            width: 120px;
+            padding: 10px;
+            border: solid 2px $--black;
+            border-radius: 5%;
+            margin: 20px auto;
+            background-color: $--white-100;
+            color: $--blue-100;
+            font-size: 17px;
+            font-weight: 600;
+            transition: background-color 1s, color 1s;
+            @include Responsive($--L) {
+                width: 100%;
+                border: none;
+                border-radius: 0;
+            }
+            @include Responsive($--S) {
+                padding: 0;
+                height: 45px;
+            }
+        }
+        #suv, #coupe {
+            @include Responsive ($--L) {
+                border-left: solid 2px $--black;
+            }
+        }
+        hr, #view-all {
+            @include Responsive($--L) {
+                display: none;
+            }
+        }
+        .btn-filter:hover {
+            color: $--white;
+            background-color: $--black;
+        }
+    }
+    .vehicle-list-product {
+        border-left: 1px solid $--black;
+        .vehicle-list-product-type {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            row-gap: 30px;
+            margin: auto 10px;
+            @include Responsive($--XM) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @include Responsive($--S) {
+                column-gap: 10px;
+            }
+            @include Responsive($--SS) {
+                grid-template-columns: repeat(1, 1fr);
+                margin: auto 0;
+            }
+            .product-type-title {
+                grid-column: 1/4;
+                position: sticky;
+                top: -1px;
+                z-index: 1;
+                padding: 10px 0;
+                background-color: $--white;
+                color: $--red-100;
+                border-bottom: solid 1px $--gray-200;
+                @include Responsive ($--L) {
+                    top: 39px;
+                }
+                @include Responsive($--XM) {
+                    grid-column: 1/3;
+                }
+                @include Responsive($--SS) {
+                    grid-column: 1/2;
+                }
+            }
+            .product-item {
+                margin: 0 0 50px 10px;
+                position: relative;
+                &-title {
+                    text-align: center;
+                    color: $--black;
+                    font-size: 20px;
+                    @include Responsive($--S) {
+                        font-size: 16px;
+                    }
+                }
+                &-price {
+                    width: 100%;
+                    text-align: center;
+                    margin: 10px 0 25px;
+                    color: $--gray-200;
+                    font-size: 18px;
+                    font-weight: 600;
+                }
+                &-img {
+                    position: relative;
+                }
+                .title-img {
+                    position: absolute;
+                    top: 10px;
+                    left: 20px;
+                }
+            }
+        }
+    }
+}

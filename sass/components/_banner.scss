@@ -1,0 +1,87 @@
+.banner {
+    position: relative;
+    height: 50vw;
+    background-image: url(../img/Slideshow-banner/mercedes_benz_c_300_amg_line_2022_4k_3-HD.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s;
+    &__text--model, &__text--slogan {
+        @include Responsive($--L) {
+            height: 45px;
+            line-height: 45px;
+            font-weight: 600;
+        }
+    }
+    &__text--model {
+        @include banner_text;
+        left: 0;
+        font-size: 50px;
+        letter-spacing: 5px;
+        color: $--white;
+        background-color: $--black;
+        @include Responsive($--L) {
+            font-size: 40px;
+            letter-spacing: 3px;
+        }
+        @include Responsive($--S) {
+            font-size: 18px;
+            height: 20px;
+            width: 30%;
+            line-height: 20px;
+        }
+    }
+    &__text--slogan {
+        @include banner_text;
+        right: 0;
+        font-size: 30px;
+        letter-spacing: 2px;
+        color: $--black;
+        background-color: $--white;
+        @include Responsive($--L) {
+            font-size: 20px;
+            letter-spacing: 0;
+        }
+        @include Responsive($--S) {
+            font-size: 16px;
+            width: 70%;
+            height: 20px;
+            line-height: 20px;
+            letter-spacing: 0;
+        }
+    }
+    &__link-product {
+        position: absolute;
+        bottom: 20px;
+        padding: 0 5px;
+        height: 50px;
+        line-height: 50px;
+        background-color: $--white;
+        text-align: center;
+        left: 50%;
+        transform: translate(-50%, 0);
+        font-size: 22px;
+        font-weight: 500;
+        color: $--black;
+        font-family: $--ff-verdana;
+        transition: color 0.5s, background-color 0.5s, width 0.5s;
+        @include Responsive($--XM) {
+            bottom: 0;
+            height: 30px;
+            line-height: 30px;
+            font-size: 18px;
+        }
+        .fa-long-arrow-right {
+            display: none;
+            transition: margin 0.5s;
+        }
+    }
+    
+    &__link-product:hover {
+        background-color: $--red-100;
+        color: $--white;
+        .fa-long-arrow-right {
+            display: inline-block;
+            margin: 0 0 0 5px;
+        }
+    }
+}

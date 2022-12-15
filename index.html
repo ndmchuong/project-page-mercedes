@@ -5,88 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./img/Icon/mercedes-logo-transparent-background-hd-png-download.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/main.css">
     <!-- link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="./main.js"></script>
+    <script defer src="./js/main.js"></script>
     <title>Mercedes-Benz Việt Nam</title>
 </head>
 <body>
     <!-- NAVIGATION -->
-
-    <header class="navbar">
-        <button class="btn-on-off-navigation" onclick="handleOnOffNav()">
+    <header class="navbar container-fluid dp-flex">
+        <button class="navbar__btn--dropdown-nav" onclick="handleDropdownNav()">
             <i class="fa fa-bars"></i>
-            MENU
+            <span>MENU</span>
+            <!-- <div class="container__nav--vertical">
+                <ul class="nav--vertical">
+                    <li class="navbar__nav__item"><button onclick="handleLinkNav(1)">CÁC DÒNG XE</button></li>
+                    <li class="navbar__nav__item"><button onclick="handleLinkNav(2)">MUA TRỰC TUYẾN</button></li>
+                    <li class="navbar__nav__item"><button onclick="handleLinkNav(3)">TƯ VẤN MUA XE</button></li>
+                    <li class="navbar__nav__item"><button onclick="handleLinkNav(4)">DỊCH VỤ</button></li>
+                    <li class="navbar__nav__item"><button onclick="handleLinkNav(5)">THẾ GIỚI MERCEDES</button></li>
+                </ul>
+            </div> -->
         </button>
-        <a href="./index.html" class="navbar-logo">
-            <img src="./img/Icon/logo.jpg">
-            <span>Mercedes-Benz</span>
+        <a href="./index.html" class="navbar__logo p-1">
+            <img class="navbar__logo--img" src="./img/Icon/logo.jpg">
+            <span class="navbar__logo--brand">Mercedes-Benz</span>
         </a>
-        
-        <ul class="navbar-nav">
-            <li class="navbar-nav-item">CÁC DÒNG XE</li>
-            <li class="navbar-nav-item">MUA TRỰC TUYẾN</li>
-            <li class="navbar-nav-item">TƯ VẤN MUA XE</li>
-            <li class="navbar-nav-item">DỊCH VỤ</li>
-            <li class="navbar-nav-item">THẾ GIỚI MERCEDES</li>
+        <ul class="navbar__nav navbar__nav--landscape">
+            <li class="navbar__nav__item"><button onclick="handleLinkNav(1)">CÁC DÒNG XE</button></li>
+            <li class="navbar__nav__item"><button onclick="handleLinkNav(2)">MUA TRỰC TUYẾN</button></li>
+            <li class="navbar__nav__item"><button onclick="handleLinkNav(3)">TƯ VẤN MUA XE</button></li>
+            <li class="navbar__nav__item"><button onclick="handleLinkNav(4)">DỊCH VỤ</button></li>
+            <li class="navbar__nav__item"><button onclick="handleLinkNav(5)">THẾ GIỚI MERCEDES</button></li>
         </ul>
+        
     </header>
     <!-- BANNER -->
-
-    <section class="banner">
-        <div class="banner-text-model">C-Class</div>
-        <div class="banner-text-slogan">Đây là thế giới của tôi</div>
-        <a href="c-class.html" class="banner-link-detail">Tìm hiểu thêm
+    <section class="banner container-fluid">
+        <div class="banner__text--model">C-Class</div>
+        <div class="banner__text--slogan">Đây là thế giới của tôi</div>
+        <a href="c-class.html" class="banner__link-product">Tìm hiểu thêm
             <i class="fa fa-long-arrow-right"></i>
         </a>
     </section>
     <!-- RECOMMEND -->
-
-    <section class="recommend">
-        <h1 class="recommend-title">Tìm hiểu thêm</h1>
-        <ul class="recommend-list">
-            <li class="recommend-list-item">
+    <section class="recommend container-fluid">
+        <h1 class="recommend__title">Tìm hiểu thêm</h1>
+        <ul class="recommend__list">
+            <li class="recommend__list__item">
                 <img src="./img/Our-recommend/mercedes-frame-price.jpg" alt="">
-                <h3 class="recommend-list-item-title">Nhận báo giá xe tại đại lý</h3>
-                <span class="recommend-list-item-content">Tìm xe có sẵn tại đại lý và nhận báo giá</span>
-                <a href="" class="recommend-list-item-link">Tìm xe có sẵn</a>
+                <h3 class="recommend__list__item__title">Nhận báo giá xe tại đại lý</h3>
+                <span class="recommend__list__item__content">Tìm xe có sẵn tại đại lý và nhận báo giá</span>
+                <a href="" class="recommend__list__item__link">Tìm xe có sẵn</a>
             </li>
-            <li class="recommend-list-item">
+            <li class="recommend__list__item">
                 <img src="./img/Our-recommend/mercedes_amg_gla_45_s.jpg" alt="">
-                <h3 class="recommend-list-item-title">Mercedes New GLA AMG</h3>
-                <span class="recommend-list-item-content">Không phải SUV đây là AMG. Phóng khoáng-trang nhã-thể thao</span>
-                <a href="" class="recommend-list-item-link">Tìm hiểu thêm</a>
+                <h3 class="recommend__list__item__title">Mercedes New GLA AMG</h3>
+                <span class="recommend__list__item__content">Không phải SUV đây là AMG. Phóng khoáng-trang nhã-thể thao</span>
+                <a href="" class="recommend__list__item__link">Tìm hiểu thêm</a>
             </li>
-            <li class="recommend-list-item">
+            <li class="recommend__list__item">
                 <img src="./img/Our-recommend/img-frameAmg-gt-63s-gia.jpg" alt="">
-                <h3 class="recommend-list-item-title">Dòng xe Mercedes-AMG</h3>
-                <span class="recommend-list-item-content">Các mẫu xe thể thao hiệu suất cao Mercedes-AMG</span>
-                <a href="" class="recommend-list-item-link">Tìm hiểu xe AMG</a>
+                <h3 class="recommend__list__item__title">Dòng xe Mercedes-AMG</h3>
+                <span class="recommend__list__item__content">Các mẫu xe thể thao hiệu suất cao Mercedes-AMG</span>
+                <a href="" class="recommend__list__item__link">Tìm hiểu xe AMG</a>
             </li>
-            <li class="recommend-list-item">
+            <li class="recommend__list__item">
                 <img src="./img/Our-recommend/gls-600-maybach.jpg" alt="">
-                <h3 class="recommend-list-item-title">Mercedes-Maybach GLS</h3>
-                <span class="recommend-list-item-content">Định nghĩa mới của sự xa xỉ</span>
-                <a href="" class="recommend-list-item-link">Tìm hiểu thêm</a>
+                <h3 class="recommend__list__item__title">Mercedes-Maybach GLS</h3>
+                <span class="recommend__list__item__content">Định nghĩa mới của sự xa xỉ</span>
+                <a href="" class="recommend__list__item__link">Tìm hiểu thêm</a>
             </li>
-            <li class="recommend-list-item">
+            <li class="recommend__list__item">
                 <img src="./img/Our-recommend/img-frameCertified.jpg" alt="">
-                <h3 class="recommend-list-item-title">Xe đã qua sử dụng chính hãng</h3>
-                <span class="recommend-list-item-content">An tâm với Mercedes-Benz Certified</span>
-                <a href="" class="recommend-list-item-link">Tìm hiểu Mercedes-Benz Certified</a>
+                <h3 class="recommend__list__item__title">Xe đã qua sử dụng chính hãng</h3>
+                <span class="recommend__list__item__content">An tâm với Mercedes-Benz Certified</span>
+                <a href="" class="recommend__list__item__link">Tìm hiểu Mercedes-Benz Certified</a>
             </li>
-            <li class="recommend-list-item">
+            <li class="recommend__list__item">
                 <img src="./img/Our-recommend/img-frameBook.png" alt="">
-                <h3 class="recommend-list-item-title">Đặt hẹn dịch vụ trực tuyến</h3>
-                <span class="recommend-list-item-content">Đặt lịch hẹn dịch vụ trực tuyến một cách thuận tiện</span>
-                <a href="" class="recommend-list-item-link">Đặt lịch hẹn</a>
+                <h3 class="recommend__list__item__title">Đặt hẹn dịch vụ trực tuyến</h3>
+                <span class="recommend__list__item__content">Đặt lịch hẹn dịch vụ trực tuyến một cách thuận tiện</span>
+                <a href="" class="recommend__list__item__link">Đặt lịch hẹn</a>
             </li>
-        </ul>
-            
+        </ul>   
     </section>
     <!-- VEHICLE -->
-
     <section class="vehicle">
         <h1 class="vehicle-title">CÁC DÒNG XE MERCEDES-BENZ</h1>
         <div class="vehicle-filter-type">
