@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="./css/main.css">
     <!-- link icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script defer src="./js/main.js"></script>
     <title>Mercedes-Benz Việt Nam</title>
 </head>
 <body>
@@ -32,12 +31,12 @@
             <img class="navbar__logo--img" src="./img/Icon/logo.jpg">
             <span class="navbar__logo--brand">Mercedes-Benz</span>
         </a>
-        <ul class="navbar__nav navbar__nav--landscape">
-            <li class="navbar__nav__item"><button onclick="handleLinkNav(1)">CÁC DÒNG XE</button></li>
-            <li class="navbar__nav__item"><button onclick="handleLinkNav(2)">MUA TRỰC TUYẾN</button></li>
-            <li class="navbar__nav__item"><button onclick="handleLinkNav(3)">TƯ VẤN MUA XE</button></li>
-            <li class="navbar__nav__item"><button onclick="handleLinkNav(4)">DỊCH VỤ</button></li>
-            <li class="navbar__nav__item"><button onclick="handleLinkNav(5)">THẾ GIỚI MERCEDES</button></li>
+        <ul class="navbar__nav">
+            <li class="navbar__nav__item"></li>
+            <li class="navbar__nav__item"></li>
+            <li class="navbar__nav__item"></li>
+            <li class="navbar__nav__item"></li>
+            <li class="navbar__nav__item"></li>
         </ul>
         
     </header>
@@ -92,102 +91,31 @@
         </ul>   
     </section>
     <!-- VEHICLE -->
-    <section class="vehicle">
-        <h1 class="vehicle-title">CÁC DÒNG XE MERCEDES-BENZ</h1>
-        <div class="vehicle-filter-type">
-            <h2 class="filter-title">Loại xe</h2>
-            <button class="btn-filter" id="sedan">
-                <a class="link-filter-type" href="">Sedan</a>
+    <section class="product">
+        <h1 class="product__title">CÁC DÒNG XE MERCEDES-BENZ</h1>
+        <div class="product__filter">
+            <h2 class="product__filter--filter-name">Loại xe</h2>
+            <button class="product__filter--btn" id="filter-sedan">
+                Sedan
             </button>
-            <button class="btn-filter" id="suv">
-                <a class="link-filter-type" href="">Crossover / SUV</a>
+            <button class="product__filter--btn" id="filter-suv">
+                Crossover / SUV
             </button>
-            <button class="btn-filter" id="coupe">
-                <a class="link-filter-type" href="">Coupe</a>
+            <button class="product__filter--btn" id="filter-coupe">
+                Coupe
             </button>
             <hr>
-            <button class="btn-filter" id="view-all">Xem tất cả</button>
+            <button class="product__filter--btn product__filter--view-all" id="view-all">Xem tất cả</button>
         </div>
-        <div class="vehicle-list-product">
-            <div class="vehicle-list-product-type">
-                <h3 class="product-type-title">Sedan</h3>
-                <a href="" class="product-item" onmouseover="handleSlideshow(0)" onmouseout="handleStopSlideshow(0)">
-                    <h4 class="product-item-title">A-Class</h4>
-                    <span class="product-item-price">Giá từ 2.429.000.000 đ</span>
-                    <img src="./img/Vehicles/A-class/home-a35-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(1)" onmouseout="handleStopSlideshow(1)">
-                    <h4 class="product-item-title">C-Class</h4>
-                    <span class="product-item-price">Giá từ 1.669.000.000 đ</span>
-                    <img src="./img/Vehicles/C-class/home-Mercedes-Benz-C-Class-1.jpg" class="product-item-img">
-                    
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(2)" onmouseout="handleStopSlideshow(2)">
-                    <h4 class="product-item-title">E-Class</h4>
-                    <span class="product-item-price">Giá từ 2.050.000.000 đ</span>
-                    <img src="./img/Vehicles/E-class/home-Mercedes-e-class-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(3)" onmouseout="handleStopSlideshow(3)">
-                    <h4 class="product-item-title">S-Class</h4>
-                    <span class="product-item-price">Giá từ 5.059.000.000 đ</span>
-                    <img src="./img/Vehicles/S-class/home-Mercedes-Benz-S-Class-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(4)" onmouseout="handleStopSlideshow(4)">
-                    <h4 class="product-item-title">Maybach S-Class</h4>
-                    <span class="product-item-price">Giá từ 8.199.000.000 đ</span>
-                    <img src="./img/Vehicles/S-class/home-maybach-1.jpg" class="product-item-img">
-                </a>
+        <div class="product__list">
+            <div class="product__list__bodytype">
+                <h3 class="product__list__bodytype--name">Sedan</h3>
             </div>
-            <div class="vehicle-list-product-type">
-                <h3 class="product-type-title">Crossover / SUV</h3>
-                <a href="" class="product-item" onmouseover="handleSlideshow(5)" onmouseout="handleStopSlideshow(5)">
-                    <h4 class="product-item-title">GLB</h4>
-                    <span class="product-item-price">Giá từ 2.069.000.000 đ</span>
-                    <img src="./img/Vehicles/GLB/home-glb200amg-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(6)" onmouseout="handleStopSlideshow(6)">
-                    <h4 class="product-item-title">GLC</h4>
-                    <span class="product-item-price">Giá từ 1.859.000.000 đ</span>
-                    <img src="./img/Vehicles/GLC/home-mercedes-benz-glc-200-4matic-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(7)" onmouseout="handleStopSlideshow(7)">
-                    <h4 class="product-item-title">GLC Coupe</h4>
-                    <span class="product-item-price">Giá từ 3.099.000.000 đ</span>
-                    <img src="./img/Vehicles/GLC/home-GLC_300_4Matic_Coupe.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(8)" onmouseout="handleStopSlideshow(8)">
-                    <h4 class="product-item-title">GLE</h4>
-                    <span class="product-item-price">Giá từ 4.409.000.000 đ</span>
-                    <img src="./img/Vehicles/GLE/home-mercedes-amg-gle-suv-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(9)" onmouseout="handleStopSlideshow(9)">
-                    <h4 class="product-item-title">GLE Coupe</h4>
-                    <span class="product-item-price">Giá từ 5.499.000.000 đ</span>
-                    <img src="./img/Vehicles/GLE/home-mercedes-amg-gle-coupe-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(10)" onmouseout="handleStopSlideshow(10)">
-                    <h4 class="product-item-title">GLS</h4>
-                    <span class="product-item-price">Giá từ 5.199.000.000 đ</span>
-                    <img src="./img/Vehicles/GLS/home-mercedes-gls-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(11)" onmouseout="handleStopSlideshow(11)">
-                    <h4 class="product-item-title">G-Class</h4>
-                    <span class="product-item-price">Giá từ 10.950.000.000 đ</span>
-                    <img src="./img/Vehicles/G-Class/home-mercedes-amg-g63-1.jpg" class="product-item-img">
-                </a>
-                <a href="" class="product-item" onmouseover="handleSlideshow(12)" onmouseout="handleStopSlideshow(12)">
-                    <h4 class="product-item-title">Maybach GLS</h4>
-                    <span class="product-item-price">Giá từ 8.399.000.000 đ</span>
-                    <img src="./img/Vehicles/GLS/home-maybach-gls-1.jpg" class="product-item-img">
-                </a>
+            <div class="product__list__bodytype">
+                <h3 class="product__list__bodytype--name">Crossover / SUV</h3>
             </div>
-            <div class="vehicle-list-product-type">
-                <h3 class="product-type-title">Xe Coupe</h3>
-                <a href="" class="product-item" id="amg-4-door" onmouseover="handleSlideshow(13)" onmouseout="handleStopSlideshow(13)">
-                    <h4 class="product-item-title">Mercedes-AMG GT 4-door Coupe </h4>
-                    <span class="product-item-price">Giá từ 6.719.000.000 đ</span>
-                    <img src="./img/Vehicles/AMG-GT-4-door/home-mercedes-amg-gt-4-door-1.jpg" class="product-item-img">
-                </a>
+            <div class="product__list__bodytype">
+                <h3 class="product__list__bodytype--name">Xe Coupe</h3>
             </div>
         </div>
     </section>
@@ -196,27 +124,27 @@
         <h1 class="services-title">Dịch vụ</h1>
         <a href="" class="services-item">
             <i class="fa fa-car services-item-ico"></i>
-            <h3 class="services-item-title">Đăng kí lái thử</h3>
+            <h4 class="services-item-title">Đăng kí lái thử</h4>
             <span class="services-item-note">Đặt lịch hẹn lái thử tại đại lý</span>
         </a><a href="" class="services-item">
             <i class="fa fa-file-text services-item-ico"></i>
-            <h3 class="services-item-title">Bảng giá & brochure</h3>
+            <h4 class="services-item-title">Bảng giá & brochure</h4>
             <span class="services-item-note">Tải về bảng giá và brochure</span>
         </a><a href="" class="services-item">
             <i class="fa fa-search services-item-ico"></i>
-            <h3 class="services-item-title">Tìm xe có sẵn</h3>
+            <h4 class="services-item-title">Tìm xe có sẵn</h4>
             <span class="services-item-note">Tìm xe có sẵn và nhận báo giá</span>
         </a><a href="" class="services-item">
             <i class="fa fa-gear services-item-ico"></i>
-            <h3 class="services-item-title">Công cụ cấu hình xe</h3>
+            <h4 class="services-item-title">Công cụ cấu hình xe</h4>
             <span class="services-item-note">Chọn cấu hình xe bạn mong muốn</span>
         </a><a href="" class="services-item">
             <i class="fa fa-wrench services-item-ico"></i>
-            <h3 class="services-item-title">Đặt lịch hẹn dịch vụ</h3>
+            <h4 class="services-item-title">Đặt lịch hẹn dịch vụ</h4>
             <span class="services-item-note">Đặt lịch hẹn dịch vụ tại đại lý</span>
         </a><a href="" class="services-item">
             <i class="fa fa-phone services-item-ico"></i>
-            <h3 class="services-item-title">Liên hệ</h3>
+            <h4 class="services-item-title">Liên hệ</h4>
             <span class="services-item-note">Yêu cầu tư vấn</span>
         </a>
     </section>
@@ -344,5 +272,10 @@
             </ul>
         </div>
     </footer>
+    <script type="module" src="./js/GetDataProduct.js"></script>
+    <script type="module" src="./js/SlideShowBanner.js"></script>
+    <script type="module" src="./js/NavLink.js"></script>
+    <script type="module" src="./js/SlideShowProduct.js"></script>
+    <script type="module" src="./js/FilterBodytype.js"></script>
 </body>
 </html>

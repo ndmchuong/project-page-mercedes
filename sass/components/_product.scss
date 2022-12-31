@@ -1,34 +1,35 @@
-.vehicle {
+.product {
     display: grid;
     grid-template-columns: 20% 80%;
     @include Responsive($--L) {
         display: block;
     }
-    .vehicle-title {
+    &__title {
         grid-column: 1/3;
     }
-    .vehicle-filter-type {
+    &__filter {
         @include Responsive($--L) {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             position: sticky;
-            top: -61px;
+            top: -46px;
             z-index: 2;
         }
-        .filter-title {
+        &--filter-name {
             text-align: center;
             margin: 20px auto;
             padding-bottom: 5px;
             color: $--black;
             border-bottom: solid 1px $--black;
             @include Responsive ($--L) {
-                grid-column: 1/4;
-                width: 100%;
+                grid-column: 1/5;
+                height: 45px;
+                line-height: 45px;
                 border: none;
                 margin: 0;
             }
         }
-        .btn-filter {
+        &--btn {
             width: 120px;
             padding: 10px;
             border: solid 2px $--black;
@@ -41,32 +42,33 @@
             transition: background-color 1s, color 1s;
             @include Responsive($--L) {
                 width: 100%;
+                margin: 0;
                 border: none;
+                border-right: solid 1px $--red-200;
+                border-left: solid 1px $--red-200;
                 border-radius: 0;
             }
-            @include Responsive($--S) {
-                padding: 0;
-                height: 45px;
+            @include Responsive($--XS) {
+                height: 65px;
+            }
+            @include Responsive($--SS) {
+                font-size: 13px;
+                padding: 5px;
             }
         }
-        #suv, #coupe {
+        hr {
             @include Responsive ($--L) {
-                border-left: solid 2px $--black;
-            }
-        }
-        hr, #view-all {
-            @include Responsive($--L) {
                 display: none;
             }
         }
-        .btn-filter:hover {
+        &--btn:hover, #view-all {
             color: $--white;
             background-color: $--black;
         }
     }
-    .vehicle-list-product {
+    &__list {
         border-left: 1px solid $--black;
-        .vehicle-list-product-type {
+        &__bodytype {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             column-gap: 20px;
@@ -82,7 +84,7 @@
                 grid-template-columns: repeat(1, 1fr);
                 margin: auto 0;
             }
-            .product-type-title {
+            &--name {
                 grid-column: 1/4;
                 position: sticky;
                 top: -1px;
@@ -97,14 +99,17 @@
                 @include Responsive($--XM) {
                     grid-column: 1/3;
                 }
+                @include Responsive($--XS) {
+                    top: 60px;
+                }
                 @include Responsive($--SS) {
                     grid-column: 1/2;
                 }
             }
-            .product-item {
-                margin: 0 0 50px 10px;
+            &--item, .product__item {
+                margin: 0 10px 50px;
                 position: relative;
-                &-title {
+                &--name {
                     text-align: center;
                     color: $--black;
                     font-size: 20px;
@@ -112,7 +117,7 @@
                         font-size: 16px;
                     }
                 }
-                &-price {
+                &--price {
                     width: 100%;
                     text-align: center;
                     margin: 10px 0 25px;
@@ -120,7 +125,7 @@
                     font-size: 18px;
                     font-weight: 600;
                 }
-                &-img {
+                &--img {
                     position: relative;
                 }
                 .title-img {
