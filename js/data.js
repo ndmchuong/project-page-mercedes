@@ -2,7 +2,7 @@ export const dataBanner = [
     {
         src: "url(../img/Slideshow-banner/mercedes_benz_c_300_amg_line_2022_4k_3-HD.jpg)",
         textModel: "C-Class",
-        textSlogan: "Đây là thế giới của tôi",
+        textSlogan: "Thế giới là của tôi",
         href: "c-class.html"
     },
     {
@@ -14,7 +14,7 @@ export const dataBanner = [
     {
         src: "url(../img/Slideshow-banner/banner-mercedes_benz_s_450_4matic.jpg)",
         textModel: "S-Class",
-        textSlogan: "Một hành trình phi thường",
+        textSlogan: "Hành trình phi thường",
         href: "s-class.html"
     },
     {
