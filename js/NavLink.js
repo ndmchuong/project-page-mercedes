@@ -29,7 +29,7 @@ const handleCreateNavLink = (id) => {
     navLinkChild.forEach((item) => navLinkElement.appendChild(item));
     return navLinkElement;
 }
-const handleLinkNav = (id) => {
+const handleDisplayNavLink = (id) => {
     const navLink = document.querySelectorAll('.navbar__nav__nav-link');
     const navbarNavItem = document.querySelectorAll(".navbar__nav__item");
     navbarNavItem.forEach((item) => item.children[0].style.color = "#fff");
@@ -55,15 +55,53 @@ const handleLinkNav = (id) => {
         })
     }
 }
+const handleDisplayNavigation = () => {
+    const navbarNav = document.querySelector(".navbar__nav");
+    const iconMenu = document.querySelector(".navbar__btn--display-nav").children[0];
+    navbarNav.classList.toggle("display");
+    switch (navbarNav.classList.length) {
+        case 1:
+            iconMenu.className = "fa fa-bars"
+            break;
+        case 2:
+            iconMenu.className = "fa fa-close"
+            break;
+        default:
+            break;
+    }
+}
+const btnDisplayNav = document.querySelector(".navbar__btn--display-nav");
+btnDisplayNav.addEventListener("click", () => handleDisplayNavigation())
 const handleCreateNavItem = () => {
     dataNavLink.map((item, index) => {
         const navbarNavItem = document.querySelectorAll(".navbar__nav__item")[index];
         const btnNavItem = document.createElement("button");
         btnNavItem.innerText = item.title;
         btnNavItem.addEventListener("click", () => {
-            handleLinkNav(item.id);
+            handleDisplayNavLink(item.id);
         });
         navbarNavItem.appendChild(btnNavItem)
     })
 }
+const handleQueryNavbar = (x) => {
+    const navbarNav = document.querySelector(".navbar__nav");
+    if (x.matches) {
+        navbarNav.style.left = "";
+        navbarNav.lastChild.remove();
+        navbarNav.childNodes.forEach((item) => {
+            item.childNodes.forEach((item) => {
+                item.style.color ="#fff"
+            })
+        })
+    }
+    else {
+        navbarNav.style.left = "auto";
+        navbarNav.className = "navbar__nav";
+        const iconMenu = document.querySelector(".navbar__btn--display-nav").children[0];
+        iconMenu.className = "fa fa-bars"
+    }
+}
+let x = window.matchMedia("(max-width: 1088px)");
+handleQueryNavbar(x);
+x.addListener(handleQueryNavbar);
 handleCreateNavItem();
