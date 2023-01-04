@@ -11,35 +11,19 @@
     @include Responsive($--S) {
         height: 70px;
     }
-    &__btn--dropdown-nav {
+    &__btn--display-nav {
         display: none;
-        position: relative;
+        width: 75px;
         align-items: center;
-        height: 100%;
-        border: none;
+        justify-content: space-around;
+        color: $--red-100;
         background-color: $--blue-300;
-        margin-bottom: 5px;
-        transition: letter-spacing 0.25s;
-        .fa-bars, .fa-close {
-            font-size: 25px;
-            color: $--red-100;
-        }
-        span {
-            font-size: 25px;
-            line-height: 25px;
-            font-weight: 600;
-            color: $--red-100;
-            margin-left: 10px;
-        }
-        @include Responsive ($--XL) {
+        font-size: 20px;
+        font-weight: 600;
+        border: none;
+        @include Responsive($--XL) {
             display: flex;
         }
-        @include Responsive($--S) {
-            font-size: 20px;
-        }
-    }
-    &__btn--dropdown-nav:hover {
-        letter-spacing: 2px;
     }
     &__logo {
         &--img {
@@ -61,7 +45,29 @@
         align-items: center;
         height: 100%;
         position: relative;
+        @include Responsive($--XL) {
+            width: 200px;
+            height: fit-content;
+            flex-direction: column;
+            align-items: baseline;
+            position: absolute;
+            z-index: 1;
+            top: 120px;
+            left: -250px;
+            padding: 0;
+            transition: 0.5s;
+        }
         &__item {
+            @include Responsive($--XL) {
+                display: flex;
+                align-items: center;
+                background-color: $--blue-300;
+                max-height: 41px;
+                overflow: hidden;
+                width: 100%;
+                margin: 5px 0;
+                transition: 0.5s;
+            } 
             button {
                 padding: 10px 15px;
                 font-family: $--ff-verdana;
@@ -70,6 +76,11 @@
                 color: $--white;
                 background-color: $--blue-300;
                 border: none;
+                @include Responsive($--XL) {
+                    width: 100%;
+                    font-size: 14px;
+                    transition: 0.5s;
+                }
             }
             button:hover {
                 background-color: $--blue-100;
@@ -86,6 +97,12 @@
             padding: 10px 30px 30px;
             animation-name: blur;
             animation-duration: 1s;
+            @include Responsive($--XL) {
+                top: 0;
+                left: 0;
+                width: 250px;
+                padding: 10px;
+            }
             &__btn--close-nav {
                 width: 50px;
                 margin: 0 auto 10px;
@@ -118,12 +135,13 @@
             to {
                 opacity: 1;
                 left: 10px;
+                @include Responsive($--XL) {
+                    left: 0;
+                }
             }
         }
     }
-    &__nav--landscape {
-        @include Responsive ($--XL) {
-            display: none;
-        }    
+    .display {
+        left: 0px
     }
 }

@@ -85,39 +85,21 @@ span {
     height: 70px;
   }
 }
-.navbar__btn--dropdown-nav {
+.navbar__btn--display-nav {
   display: none;
-  position: relative;
+  width: 75px;
   align-items: center;
-  height: 100%;
-  border: none;
+  justify-content: space-around;
+  color: #ed0000;
   background-color: #151827;
-  margin-bottom: 5px;
-  transition: letter-spacing 0.25s;
-}
-.navbar__btn--dropdown-nav .fa-bars, .navbar__btn--dropdown-nav .fa-close {
-  font-size: 25px;
-  color: #ed0000;
-}
-.navbar__btn--dropdown-nav span {
-  font-size: 25px;
-  line-height: 25px;
+  font-size: 20px;
   font-weight: 600;
-  color: #ed0000;
-  margin-left: 10px;
+  border: none;
 }
 @media only screen and (max-width: 1088px) {
-  .navbar__btn--dropdown-nav {
+  .navbar__btn--display-nav {
     display: flex;
   }
-}
-@media only screen and (max-width: 670px) {
-  .navbar__btn--dropdown-nav {
-    font-size: 20px;
-  }
-}
-.navbar__btn--dropdown-nav:hover {
-  letter-spacing: 2px;
 }
 .navbar__logo--img {
   width: auto;
@@ -140,6 +122,32 @@ span {
   height: 100%;
   position: relative;
 }
+@media only screen and (max-width: 1088px) {
+  .navbar__nav {
+    width: 200px;
+    height: fit-content;
+    flex-direction: column;
+    align-items: baseline;
+    position: absolute;
+    z-index: 1;
+    top: 120px;
+    left: -250px;
+    padding: 0;
+    transition: 0.5s;
+  }
+}
+@media only screen and (max-width: 1088px) {
+  .navbar__nav__item {
+    display: flex;
+    align-items: center;
+    background-color: #151827;
+    max-height: 41px;
+    overflow: hidden;
+    width: 100%;
+    margin: 5px 0;
+    transition: 0.5s;
+  }
+}
 .navbar__nav__item button {
   padding: 10px 15px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -148,6 +156,13 @@ span {
   color: #fff;
   background-color: #151827;
   border: none;
+}
+@media only screen and (max-width: 1088px) {
+  .navbar__nav__item button {
+    width: 100%;
+    font-size: 14px;
+    transition: 0.5s;
+  }
 }
 .navbar__nav__item button:hover {
   background-color: #00197e;
@@ -163,6 +178,14 @@ span {
   padding: 10px 30px 30px;
   animation-name: blur;
   animation-duration: 1s;
+}
+@media only screen and (max-width: 1088px) {
+  .navbar__nav__nav-link {
+    top: 0;
+    left: 0;
+    width: 250px;
+    padding: 10px;
+  }
 }
 .navbar__nav__nav-link__btn--close-nav {
   width: 50px;
@@ -195,12 +218,15 @@ span {
   to {
     opacity: 1;
     left: 10px;
+    @media only screen and (max-width: 1088px) {
+      .navbar__nav {
+        left: 0;
+      }
+    }
   }
 }
-@media only screen and (max-width: 1088px) {
-  .navbar__nav--landscape {
-    display: none;
-  }
+.navbar .display {
+  left: 0px;
 }
 
 .banner {
